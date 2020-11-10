@@ -1,5 +1,3 @@
-
-
 def quick_sort(my_list):
     length = len(my_list)
     if length <=1:
