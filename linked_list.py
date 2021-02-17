@@ -39,9 +39,6 @@ class LinkedList:
                 currentNode = None
 
 
-
-
-
     def print_list(self):
         currentNode = self.head
         while True:
