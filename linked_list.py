@@ -19,6 +19,28 @@ class LinkedList:
                     break
                 else:
                     currentNode = currentNode.nextNode
+    
+    def delete(self, value):
+        currentNode = self.head
+        if value == self.head.value:
+            self.head = self.head.nextNode
+            currentNode = None
+            return
+        else:
+            prev_node = None
+            while currentNode and currentNode.value != value:
+                prev_node = currentNode
+                currentNode = currentNode.nextNode
+            
+            if currentNode is None:
+                print("Element to be deleted is not found")
+            else:
+                prev_node.nextNode = currentNode.nextNode
+                currentNode = None
+
+
+
+
 
     def print_list(self):
         currentNode = self.head
@@ -35,5 +57,8 @@ class LinkedList:
 ll = LinkedList()
 ll.insert("5")
 ll.insert("8")
+ll.insert("7")
 ll.insert("9")
+
+ll.delete("7")
 ll.print_list()
